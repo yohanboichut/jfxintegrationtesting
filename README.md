@@ -13,7 +13,7 @@ and an abstract class **User**. We add also a factory **ServiceFactory**. A user
 
 ## The JFx views (*views package*)
 This application is really minimalist. The menu is composed of two buttons (*Menu*): *Delete a user* and *quit*. 
-Clicking on *Delete a user* leads you toward a lovely pane (*UserList*) composed of a listview (*Li#   stView*) and two buttons 
+Clicking on *Delete a user* leads you toward a lovely pane (*UserList*) composed of a listview (*ListView*) and two buttons 
 (*delete a user* and *menu*).
 
 ## The Controller (*controller package*)
@@ -22,6 +22,12 @@ Basically, like in any MVC application, the controller has its orchestral role.
 ## What are these Storylines?
 In the class *MainTest*, one can denote two basic storylines: 
 * a user runs the application, click on *delete a user*, 
-select a user in the listview, click on the delete button and finally cancel his action.
+select a user in the listview, click on the delete button and finally cancel his action. The class 
+*StoryLineSelectAUserAndCancel* explicitly defines what we expect about an instance of the class UserService in this 
+storyline. 
 * a user runs the application, click on *delete a user*, select a user in the listview, click on the delete button and 
-finally confirm his action. 
+finally confirm his action. The class *StoryLineSelectAUserAndConfirm* explicitly defines what we expect 
+about an instance of the class UserService in this storyline. 
+
+
+In the package *mock*, it corresponds to an initialization of the used mock. 
