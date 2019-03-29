@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.UserList">
+    <children>
+        <ListView fx:id="listView" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" fx:id="delete" onAction="#delete" text="Delete selected user" />
+            <Button mnemonicParsing="false" fx:id="menu" onAction="#menu" text="Menu" />
+         </children>
+      </HBox>
+    </children>
+</VBox>
