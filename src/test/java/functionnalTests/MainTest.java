@@ -6,13 +6,18 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 import model.ServiceFactory;
+import model.User;
 import model.UserService;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Test;
 import org.loadui.testfx.GuiTest;
 import org.testfx.api.FxToolkit;
 import org.testfx.framework.junit.ApplicationTest;
 import storylines.StorylineFactory;
+
+import java.util.Collection;
+import java.util.function.Predicate;
 
 import static org.junit.Assert.assertThat;
 
@@ -63,10 +68,11 @@ public abstract class MainTest extends ApplicationTest
         clickOn("#delete");
         sleepBetweenActions();
 
-        ListView<String> liste = (ListView<String>) GuiTest.find("#listView");
+        ListView<User> liste = (ListView<User>) GuiTest.find("#listView");
         sleepBetweenActions();
 
         liste.getSelectionModel().selectIndices(1);
+        User selectedUser = liste.getSelectionModel().getSelectedItem();
 
         clickOn("#delete");
         sleepBetweenActions();
@@ -74,6 +80,13 @@ public abstract class MainTest extends ApplicationTest
         sleepBetweenActions();
         clickOn("#cancel");
         sleepBetweenActions();
+        Collection<User> resultat = liste.getItems().filtered(new Predicate<User>() {
+            @Override
+            public boolean test(User user) {
+                return user.getId() == selectedUser.getId();
+            }
+        });
+        Assert.assertFalse(resultat.isEmpty());
 
     }
 
@@ -93,16 +106,24 @@ public abstract class MainTest extends ApplicationTest
         clickOn("#delete");
         sleepBetweenActions();
 
-        ListView<String> liste = (ListView<String>) GuiTest.find("#listView");
+        ListView<User> liste = (ListView<User>) GuiTest.find("#listView");
         sleepBetweenActions();
 
         liste.getSelectionModel().selectIndices(0);
+        User selectedUser = liste.getSelectionModel().getSelectedItem();
         sleepBetweenActions();
         clickOn("#delete");
         sleepBetweenActions();
         clickOn("#confirm");
         sleepBetweenActions();
 
+        Collection<User> resultat = liste.getItems().filtered(new Predicate<User>() {
+            @Override
+            public boolean test(User user) {
+                return user.getId() == selectedUser.getId();
+            }
+        });
+        Assert.assertTrue(resultat.isEmpty());
 
 
     }

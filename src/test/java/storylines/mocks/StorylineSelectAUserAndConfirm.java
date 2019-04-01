@@ -40,6 +40,11 @@ public class StorylineSelectAUserAndConfirm extends Storyline {
 
         personnes1.add(fred);
 
+        EasyMock.expect(yohan.getId()).andReturn(0L).anyTimes();
+
+
+        EasyMock.expect(fred.getId()).andReturn(1L).anyTimes();
+
 
         EasyMock.replay(yohan,fred, getUserService());
 

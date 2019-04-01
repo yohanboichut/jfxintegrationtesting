@@ -1,13 +1,8 @@
-package functionnalTests.implem;
-
-import model.ServiceFactory;
-import model.UserService;
+package model;
 
 public class ServiceFactoryImpl implements ServiceFactory {
-
-
     @Override
     public UserService getFacade() {
-        return null;
+        return new UserServiceImpl();
     }
 }

@@ -26,9 +26,15 @@ public class StorylineSelectAUserAndCancel extends Storyline {
 
         EasyMock.expect(yohan.getFirstName()).andReturn("Yohan").anyTimes();
 
+
         EasyMock.expect(fred.getLastName()).andReturn("MOAL").anyTimes();
 
         EasyMock.expect(fred.getFirstName()).andReturn("Fred").anyTimes();
+
+        EasyMock.expect(yohan.getId()).andReturn(0L).anyTimes();
+
+
+        EasyMock.expect(fred.getId()).andReturn(1L).anyTimes();
 
 
         EasyMock.replay(yohan,fred, getUserService());

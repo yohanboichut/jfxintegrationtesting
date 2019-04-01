@@ -6,6 +6,18 @@ public abstract class User {
     String lastName;
     String firstName;
 
+
+    public User(String lastName, String firstName) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+    }
+
+    public User(long id, User u) {
+        this.id = id;
+        this.lastName = u.lastName;
+        this.firstName = u.firstName;
+    }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
