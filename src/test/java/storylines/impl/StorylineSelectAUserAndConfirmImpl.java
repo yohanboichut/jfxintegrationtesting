@@ -8,7 +8,12 @@ import storylines.Storyline;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
+/**
+ * A user runs the application, click on *delete a user*, select a user in the listview,
+ * click on the delete button and finally confirm his action.
+ * The class *StoryLineSelectAUserAndConfirmImpl* explicitly defines what we expect about an instance
+ * of the type UserService in this storyline.
+ */
 public class StorylineSelectAUserAndConfirmImpl extends Storyline {
     public StorylineSelectAUserAndConfirmImpl(UserService userService) {
         super(userService);
@@ -16,6 +21,10 @@ public class StorylineSelectAUserAndConfirmImpl extends Storyline {
 
     @Override
     public void execute() {
+        /**
+         * In this method, we define the data that must be in our user service for this storyline.
+         **/
+
         User yohan = new UserImpl("YohanImpl","BoichutImpl");
         User fred = new UserImpl("FredericImpl","MoalImpl");
         this.getUserService().addUser(yohan);

@@ -13,8 +13,8 @@ public class StorylineFactoryMocked implements StorylineFactory {
     @Override
     public Storyline getScenario(UserService userService, String cle) {
         switch (cle) {
-            case SELECT_AUSER_AND_CANCEL: return new StorylineSelectAUserAndCancel(userService);
-            case SELECT_AUSER_AND_CONFIRM: return new StorylineSelectAUserAndConfirm(userService);
+            case SELECT_AUSER_AND_CANCEL: return new StorylineSelectAUserAndCancelMock(userService);
+            case SELECT_AUSER_AND_CONFIRM: return new StorylineSelectAUserAndConfirmMock(userService);
         }
         return null;
     }
