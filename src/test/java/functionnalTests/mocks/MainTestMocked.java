@@ -1,13 +1,13 @@
 package functionnalTests.mocks;
 
-import storylines.mocks.StorylineFactoryMocked;
+import storylines.mocks.StorylineFactoryMocks;
 import functionnalTests.MainTest;
 
 public class MainTestMocked extends MainTest {
 
 
     public MainTestMocked() {
-        super(new ServiceFactoryMock(), new StorylineFactoryMocked());
+        super(new ServiceFactoryMock(), new StorylineFactoryMocks());
 
 
 

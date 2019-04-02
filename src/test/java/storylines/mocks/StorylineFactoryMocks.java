@@ -7,7 +7,7 @@ import storylines.Storyline;
 import static functionnalTests.MainTest.SELECT_AUSER_AND_CANCEL;
 import static functionnalTests.MainTest.SELECT_AUSER_AND_CONFIRM;
 
-public class StorylineFactoryMocked implements StorylineFactory {
+public class StorylineFactoryMocks implements StorylineFactory {
 
 
     @Override
